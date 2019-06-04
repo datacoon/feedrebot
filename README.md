@@ -10,9 +10,6 @@ Installation:
 4. Run your bot as 'python3 news2rssbot.py'
 5. Connect your bot via telegram and use it's commands to add channels and feeds. Use '/help' command to start
 
-
-4. '
-
 Requirements:
  - MongoDB
  - mongoengine
