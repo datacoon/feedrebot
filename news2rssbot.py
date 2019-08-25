@@ -16,7 +16,7 @@ from settings import *
 
 import feedparser
 from findfeeds import FeedsExtractor
-from newsworker.extractor import FeedExtractor
+from newsworker.extractor import tractor
 
 
 requests.adapters.DEFAULT_RETRIES = 5
@@ -82,7 +82,7 @@ def __verify_feed(url, update=None):
             else:
                 return feeds
             bot_logdebug(update, 'Проверяем на наличие новостей в теле HTML страницы')
-            ext = RSSExtractor(filtered_text_length=150)
+            ext = FeedExtractor(filtered_text_length=150)
             data, session = ext.get_rss(url)
             logging.info(data)
             if data and len(data['items']) > 0:
